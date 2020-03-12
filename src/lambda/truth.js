@@ -16,6 +16,8 @@ exports.handler = async (event, context) => {
   // When the method is POST, the name will no longer be in the event’s
   // queryStringParameters – it’ll be in the event body encoded as a queryString
   const params = querystring.parse(event.body);
+  console.log("DEBUG PARAMS", params);
+  console.log("DEBUG CHANNEL", params.channel);
   const truth = Math.random() >= PROBABILITY;
   return await web.chat.postMessage({
     channel: params.channel,
