@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import WebClient from "@slack/web-api";
+import { WebClient } from "@slack/web-api";
 import querystring from "querystring";
 dotenv.config();
 const token = process.env.SLACK_TOKEN;
