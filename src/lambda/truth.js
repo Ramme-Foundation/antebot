@@ -17,10 +17,10 @@ exports.handler = async (event, context) => {
   // queryStringParameters – it’ll be in the event body encoded as a queryString
   const params = querystring.parse(event.body);
   console.log("DEBUG PARAMS", params);
-  console.log("DEBUG CHANNEL", params.channel);
+  console.log("DEBUG CHANNEL", params.channel_id);
   const truth = Math.random() >= PROBABILITY;
   return await web.chat.postMessage({
-    channel: params.channel,
+    channel: params.channel_id,
     text: `Ante talar... ${truth ? "Sanning!" : "Inte Sanning!"}`
   });
 };
